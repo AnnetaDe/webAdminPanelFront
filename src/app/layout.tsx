@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.scss';
 import { Providers } from './Providers';
+import { Fira_Mono } from 'next/font/google';
+
+const inter = Fira_Mono({ subsets: ['cyrillic', 'latin'], weight: '400' });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,8 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
     </html>

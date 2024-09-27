@@ -25,9 +25,9 @@ export function ProfileInfo() {
           <Image src={user.avatarUrl} alt="Avatar" width={100} height={100} />
         )}
         <div>
-          <h2 className="text-2xl font-bold">Добрый день!</h2>
-          <p className="text-lg">Ваш email: {user.email}</p>
-          <p className="text-lg">Роль: {user.role}</p>
+          <h2 className="text-2xl font-bold">Hello! {user.role}</h2>
+          <p className="text-lg">Your email: {user.email}</p>
+          <p className="text-lg">Your accses type: {user.role}</p>
 
           <button onClick={() => mutateLogout()} disabled={isLogoutPending}>
             <LogOut />
