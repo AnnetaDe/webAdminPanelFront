@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button/Button';
 import { Field } from '@/components/ui/field/Field';
 import { Loader } from '@/components/ui/loader/Loader';
+import { ROUTES } from '@/routesconfig';
 import authService from '@/services/auth/auth.service';
 import { IAuthFormData } from '@/types';
 import { useMutation } from '@tanstack/react-query';
@@ -38,7 +39,7 @@ export function AuthForm({ isLogin }: AuthFormProps) {
     mutationFn: (data: IAuthFormData) => authService.main('register', data),
     onSuccess() {
       reset();
-      router.push('/');
+      router.push(ROUTES.HOME);
       toast.success('Registration successful');
     },
   });
@@ -55,6 +56,7 @@ export function AuthForm({ isLogin }: AuthFormProps) {
         extra="mb-4"
         label="Email"
         type="email"
+        autoComplete="email"
         placeholder="Enter email: "
         {...register('email', { required: true })}
       />
@@ -65,6 +67,7 @@ export function AuthForm({ isLogin }: AuthFormProps) {
         extra="mb-4"
         label="password"
         type="password"
+        autoComplete="current-password"
         placeholder="Enter password: "
         {...register('password', { required: true })}
       />

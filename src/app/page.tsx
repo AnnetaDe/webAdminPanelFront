@@ -17,7 +17,7 @@ export default function Home() {
       {!user.isAdmin ? (
         <p>Not admin</p>
       ) : (
-        <>
+        <div>
           <MainChart />
           <Numbers />
           <div>
@@ -25,7 +25,7 @@ export default function Home() {
             <RecentVideo />
             <ManageUsers />
           </div>
-        </>
+        </div>
       )}
     </main>
   );

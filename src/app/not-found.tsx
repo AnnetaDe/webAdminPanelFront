@@ -10,9 +10,7 @@ export default function Custom404() {
       <p className="text-xl mb-8">
         Oops! The page you are looking for could not be found.
       </p>
-      <Link href="/">
-        <a className="text-blue-500 underline">Go back home</a>
-      </Link>
+      <Link href="/">Go back home</Link>
     </div>
   );
 }
