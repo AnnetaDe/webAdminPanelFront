@@ -1,20 +1,20 @@
-import type { TypeUserForm } from './user-form.types'
+import type { TypeUserForm } from './user-form.types';
 
 export function UserFormHeading({
-	type,
-	email,
+  type,
+  email,
 }: {
-	type: TypeUserForm
-	email?: string
+  type: TypeUserForm;
+  email?: string;
 }) {
-	switch (type) {
-		case 'create':
-			return 'Создание пользователя'
+  switch (type) {
+    case 'create':
+      return 'Create user';
 
-		case 'edit':
-			return `Редактирование "${email}"`
+    case 'edit':
+      return `Edit "${email}"`;
 
-		default:
-			return 'Редактирование профиля'
-	}
+    default:
+      return 'Edit user';
+  }
 }

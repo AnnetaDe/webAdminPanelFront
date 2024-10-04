@@ -8,7 +8,7 @@ export function useProfile() {
   const { data, isLoading } = useQuery({
     queryKey: ['profile'],
     queryFn: () => authService.profile(),
-    refetchInterval: 1800000,
+    refetchInterval: 3000,
   });
 
   const { isSuccess, data: dataTokens } = useQuery({

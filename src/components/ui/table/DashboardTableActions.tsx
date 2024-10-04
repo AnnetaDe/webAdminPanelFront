@@ -1,32 +1,32 @@
-import { Edit, Trash2 } from 'lucide-react'
-import Link from 'next/link'
+import { Edit, Trash2 } from 'lucide-react';
+import Link from 'next/link';
 
-import styles from './DashboardTable.module.scss'
-import type { IDashboardTableBaseData } from './dashboard-table.types'
+import styles from './DashboardTable.module.scss';
+import type { IDashboardTableBaseData } from './dashboard-table.types';
 
 export function DashboardTableActions<TData extends IDashboardTableBaseData>({
-	baseRecord,
+  baseRecord,
 }: {
-	baseRecord: TData
+  baseRecord: TData;
 }) {
-	const { deleteHandler, editUrl } = baseRecord
+  // const { deleteHandler, editUrl } = baseRecord;
 
-	return (
-		<>
-			{editUrl && (
-				<td className={styles.minWidth}>
-					<Link href={editUrl} aria-label='Open edit page'>
-						<Edit />
-					</Link>
-				</td>
-			)}
-			{deleteHandler && (
-				<td className={styles.minWidth}>
-					<button onClick={deleteHandler} aria-label='Delete'>
-						<Trash2 />
-					</button>
-				</td>
-			)}
-		</>
-	)
+  return (
+    <>
+      {baseRecord.editUrl && (
+        <td className={styles.minWidth}>
+          <Link href={baseRecord.editUrl} aria-label="Open edit">
+            <Edit />
+          </Link>
+        </td>
+      )}
+      {baseRecord.deleteHandler && (
+        <td className={styles.minWidth}>
+          <button onClick={baseRecord.deleteHandler} aria-label="Delete">
+            <Trash2 />
+          </button>
+        </td>
+      )}
+    </>
+  );
 }

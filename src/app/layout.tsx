@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.scss';
 import { Providers } from './Providers';
 import { Fira_Mono } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Fira_Mono({ subsets: ['cyrillic', 'latin'], weight: '400' });
 
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

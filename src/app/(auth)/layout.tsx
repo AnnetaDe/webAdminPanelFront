@@ -4,6 +4,7 @@ import type { PropsWithChildren } from 'react';
 
 export default async function Layout({ children }: PropsWithChildren<unknown>) {
   const user = await getServerAuth();
+  console.log('user', user);
 
   if (user?.isLoggedIn) {
     return redirect(user.isAdmin ? '/' : '/');

@@ -16,6 +16,7 @@ class AuthService {
     );
 
     if (response.data.accessToken) saveTokenStorage(response.data.accessToken);
+    console.log('response', response);
 
     return response;
   }
