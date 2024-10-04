@@ -37,3 +37,73 @@ h2 {
 h1 {
   font-size: 50px;
 }
+@layer base {
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    input,
+    button {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    body {
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    input,
+    button {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    body {
+      font-size: 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    input,
+    button {
+      font-size: 20px;
+    }
+  }
+}

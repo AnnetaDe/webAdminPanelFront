@@ -9,6 +9,8 @@ import { Numbers } from './admin/charts/Numbers';
 import { RadarChart } from './admin/charts/RadarChart';
 import { ManageUsers } from './admin/users/ManageUsers';
 import { Loader } from '@/components/ui/loader/Loader';
+import { Doughnut } from 'react-chartjs-2';
+import { DoughnutChart } from './admin/charts/DouhtnutChart';
 
 export default function Home() {
   const { user, isLoading } = useProfile();
@@ -29,6 +31,7 @@ export default function Home() {
           <Numbers />
           <div>
             <RadarChart />
+            <DoughnutChart />
             <ManageUsers />
           </div>
         </>

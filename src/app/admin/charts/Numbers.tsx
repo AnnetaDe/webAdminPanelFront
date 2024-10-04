@@ -28,14 +28,18 @@ export function Numbers() {
       {data.data.map((number, index) => (
         <m.div
           key={number.name}
-          className="bg-gray-500 rounded-md p-5 grid grid-cols-2 gap-10"
+          className="bg-gray-500 rounded-md p-2 grid grid-flow-row h-24  "
           variants={itemVariants}
           whileHover={ROTATE_CARD.whileHover}
           transition={ROTATE_CARD.transition}
         >
-          <div className="h-full">
-            <div>{number.name}</div>
-            <div className="font-bold">{number.value}</div>
+          <div className="h-full flex flex-col justify-between">
+            <div className="text-sm overflow-hidden text-ellipsis whitespace-nowrap flex">
+              {number.name}
+            </div>
+            <div className="font-bold overflow-hidden text-sm">
+              {number.value}
+            </div>
           </div>
           <div className="flex items-end">
             {index % 2 === 0 ? (
