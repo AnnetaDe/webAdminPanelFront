@@ -4,7 +4,7 @@ import { UserForm } from '../UserForm';
 export const metadata: Metadata = {
   title: 'create',
 };
-console.log(metadata); // { title: 'create'
+console.log(metadata);
 
 export default function CreateUserPage() {
   return <UserForm type="create" />;

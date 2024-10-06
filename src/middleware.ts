@@ -28,7 +28,6 @@ export async function middleware(request: NextRequest) {
       accessToken,
       new TextEncoder().encode(`${process.env.JWT_SECRET}`)
     );
-    console.log('response', response);
 
     return NextResponse.next();
   } catch (error) {
