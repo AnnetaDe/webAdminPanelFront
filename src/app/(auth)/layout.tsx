@@ -12,11 +12,5 @@ export default async function Layout({ children }: PropsWithChildren<unknown>) {
   if (user?.isLoggedIn) {
     return redirect('/');
   }
-  return (
-    <>
-      <div>Login or register</div>
-
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

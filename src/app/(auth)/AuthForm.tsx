@@ -6,6 +6,7 @@ import { Loader } from '@/components/ui/loader/Loader';
 import authService from '@/services/auth/auth.service';
 import { IAuthFormData } from '@/types';
 import { useMutation } from '@tanstack/react-query';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -84,6 +85,11 @@ export function AuthForm({ isLogin }: AuthFormProps) {
           {isPending ? <Loader /> : isLogin ? 'Login' : 'Register'}
         </Button>
       </div>
+      {isLogin ? (
+        <Link href={'/register'}>Don't have account? Register </Link>
+      ) : (
+        <Link href={'/login'}>Already have account? Login </Link>
+      )}
     </form>
   );
 }
