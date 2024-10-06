@@ -9,15 +9,15 @@ import { Numbers } from './admin/charts/Numbers';
 import { RadarChart } from './admin/charts/RadarChart';
 import { ManageUsers } from './admin/users/ManageUsers';
 import { Loader } from '@/components/ui/loader/Loader';
-import { Doughnut } from 'react-chartjs-2';
 import { DoughnutChart } from './admin/charts/DouhtnutChart';
 
 export default function Home() {
-  const { user, isLoading } = useProfile();
+  const { isLoading, user } = useProfile();
 
   return isLoading ? (
     <div className="w-screen h-screen flex items-center justify-center">
       <Loader />
+      <div className="text-white">Home...</div>
     </div>
   ) : (
     <main className="min-h-screen p-6">

@@ -11,12 +11,13 @@ import {
 } from './transform-user-to-state';
 
 export async function getServerAuth(): Promise<TUserDataState | null> {
-  const JWT_SECRET = process.env.JWT_SECRET;
-  console.log('JWT_SECRET', JWT_SECRET);
+  const { JWT_SECRET } = process.env;
   let accessToken = cookies().get(EnumTokens.ACCESS_TOKEN)?.value;
-  const refreshToken = cookies().get(EnumTokens.REFRESH_TOKEN)?.value;
+  let refreshToken = cookies().get(EnumTokens.REFRESH_TOKEN)?.value;
 
-  if (!refreshToken) return null;
+  if (!refreshToken) {
+    return null;
+  }
 
   if (!accessToken) {
     try {
@@ -32,9 +33,10 @@ export async function getServerAuth(): Promise<TUserDataState | null> {
       accessToken,
       new TextEncoder().encode(`${JWT_SECRET}`)
     );
-    console.log('payload', payload);
 
-    if (!payload) return null;
+    if (!payload) {
+      return null;
+    }
 
     return transformUserToState(payload);
   } catch (error) {

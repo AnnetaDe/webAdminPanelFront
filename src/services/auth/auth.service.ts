@@ -14,10 +14,13 @@ class AuthService {
       `/auth/${type}`,
       data
     );
+    if (!response.data.accessToken) {
+      return response;
+    }
 
-    if (response.data.accessToken) saveTokenStorage(response.data.accessToken);
-    console.log('response', response);
-
+    if (response.data.accessToken) {
+      saveTokenStorage(response.data.accessToken);
+    }
     return response;
   }
 
@@ -26,7 +29,9 @@ class AuthService {
       '/auth/login/access-token'
     );
 
-    if (response.data.accessToken) saveTokenStorage(response.data.accessToken);
+    if (response.data.accessToken) {
+      saveTokenStorage(response.data.accessToken);
+    }
 
     return response;
   }
@@ -48,7 +53,9 @@ class AuthService {
   async logout() {
     const response = await axiosClassic.post<boolean>('/auth/logout');
 
-    if (response.data) removeFromStorage();
+    if (response.data) {
+      removeFromStorage();
+    }
 
     return response;
   }

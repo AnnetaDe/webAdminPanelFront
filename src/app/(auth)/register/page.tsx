@@ -1,17 +1,17 @@
-import type { Metadata } from 'next'
-import { AuthForm } from '../AuthForm'
+import type { Metadata } from 'next';
+import { AuthForm } from '../AuthForm';
 
 export const metadata: Metadata = {
-	title: 'Register',
-}
+  title: 'Register',
+};
 
 export default function RegisterPage() {
-	return (
-		<div className='min-h-screen flex items-center justify-center bg-neutral-950'>
-			<div className='bg-neutral-900 p-8 rounded-lg shadow-md'>
-				<h2 className='font-semibold mb-4'>Register</h2>
-				<AuthForm isLogin={false} />
-			</div>
-		</div>
-	)
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-neutral-950">
+      <div className="bg-neutral-900 p-8 rounded-lg shadow-md">
+        <h2 className="font-semibold mb-4">Register Page</h2>
+        <AuthForm isLogin={false} />
+      </div>
+    </div>
+  );
 }

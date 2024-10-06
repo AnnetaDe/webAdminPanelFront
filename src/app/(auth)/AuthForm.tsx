@@ -27,6 +27,9 @@ export function AuthForm({ isLogin }: AuthFormProps) {
       router.push('/');
       toast.success('Login successful');
     },
+    onError(error) {
+      toast.error(error.message || 'Login failed');
+    },
   });
 
   const {
@@ -40,6 +43,9 @@ export function AuthForm({ isLogin }: AuthFormProps) {
       reset();
       router.push('/');
       toast.success('Registration successful');
+    },
+    onError(error) {
+      toast.error(error.message || 'Registration failed');
     },
   });
 

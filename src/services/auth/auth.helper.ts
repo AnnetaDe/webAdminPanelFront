@@ -12,7 +12,7 @@ export const getAccessToken = () => {
 
 export const saveTokenStorage = (accessToken: string) => {
   Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-    domain: 'localhost',
+    // domain: process.env.NEXT_PUBLIC_DOMAIN,
     sameSite: 'strict',
     expires: 1,
   });
@@ -20,4 +20,5 @@ export const saveTokenStorage = (accessToken: string) => {
 
 export const removeFromStorage = () => {
   Cookies.remove(EnumTokens.ACCESS_TOKEN);
+  Cookies.remove(EnumTokens.REFRESH_TOKEN);
 };

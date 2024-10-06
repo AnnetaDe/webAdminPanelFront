@@ -54,19 +54,21 @@ export function ManageUsers() {
               dataIndex: 'id',
               render: record => record.id,
             },
-            {
-              title: 'Avatar',
-              dataIndex: 'avatarUrl',
-              render: record =>
-                record.avatarUrl ? (
-                  <Image
-                    src={record.avatarUrl}
-                    width={50}
-                    height={50}
-                    alt="ava"
-                  />
-                ) : null,
-            },
+            // {
+            //   title: 'Avatar',
+            //   dataIndex: 'avatarUrl',
+            //   render: record =>
+            //     record.avatarUrl ? (
+            //       <Image
+            //         src={record.avatarUrl}
+            //         width={50}
+            //         height={50}
+            //         alt="ava"
+            //       />
+            //     ) : (
+            //       ('No avatar' as any)
+            //     ),
+            // },
             {
               title: 'Email',
               dataIndex: 'email',
