@@ -8,6 +8,7 @@ import DashboardTable from '../../components/ui/table/DashboardTable';
 export default async function Layout({ children }: PropsWithChildren<unknown>) {
   console.log('LoginRegisterLayout');
   const user = await getServerAuth();
+  console.log('user', user);
   if (user?.isLoggedIn) {
     return redirect('/');
   }

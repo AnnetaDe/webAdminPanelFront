@@ -1,21 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/old-path",
-      "destination": "/new-path",
-      "permanent": true
-    },
-    {
-      "source": "/admin",
-      "has": [
-        {
-          "type": "cookie",
-          "key": "accessToken",
-          "value": "(?!.*\\S)"
-        }
-      ],
-      "destination": "/login",
-      "permanent": false
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
