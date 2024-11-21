@@ -13,7 +13,6 @@ import { DoughnutChart } from './admin/charts/DouhtnutChart';
 
 export default function Home() {
   const { isLoading, user } = useProfile();
-  console.log('user', user);
 
   return isLoading ? (
     <div className="w-screen h-screen flex items-center justify-center">
