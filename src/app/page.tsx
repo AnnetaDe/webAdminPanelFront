@@ -21,20 +21,24 @@ export default function Home() {
       <div className="text-white">Home...</div>
     </div>
   ) : (
-    <main className="min-h-screen p-6">
+    <main className="min-h-svh w-auto  p-4">
       <ProfileInfo />
 
       {!user.isAdmin ? (
         'You are not an admin'
       ) : (
         <>
-          <MainChart />
-          <Numbers />
-          <div>
-            <RadarChart />
-            <DoughnutChart />
-            <ManageUsers />
-          </div>
+       
+         
+            <div className=" items-center justify-center max-w-fit">
+              <MainChart />
+              <Numbers /> 
+              <RadarChart /> 
+              <DoughnutChart />  
+              <ManageUsers />
+            </div>
+         
+    
         </>
       )}
     </main>

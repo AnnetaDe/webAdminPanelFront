@@ -33,19 +33,16 @@ export function Numbers() {
           whileHover={ROTATE_CARD.whileHover}
           transition={ROTATE_CARD.transition}
         >
-          <div className="h-full flex flex-col justify-between">
-            <div className="text-sm overflow-hidden text-ellipsis whitespace-nowrap flex">
-              {number.name}
-            </div>
-            <div className="font-bold overflow-hidden text-sm">
-              {number.value}
-            </div>
+          <div className="h-full flex flex-col items-center text-xs">
+            <div className="">{number.name}</div>
+            <div className="block">{number.value}</div>
           </div>
+
           <div className="flex items-end">
             {index % 2 === 0 ? (
-              <AreaChart color={COLORS.primary} size={45} />
+              <AreaChart color={COLORS.primary} size={35} />
             ) : (
-              <BarChart3 color={COLORS.secondary} size={45} />
+              <BarChart3 color={COLORS.secondary} size={35} />
             )}
           </div>
         </m.div>
