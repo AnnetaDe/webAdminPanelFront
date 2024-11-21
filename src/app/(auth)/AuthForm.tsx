@@ -14,6 +14,10 @@ import toast from 'react-hot-toast';
 interface AuthFormProps {
   isLogin: boolean;
 }
+const TEST_ACCOUNT = {
+  email: 'aaaa@aaaaa.com',
+  password: 'aaAAaa',
+};
 
 export function AuthForm({ isLogin }: AuthFormProps) {
   const { register, handleSubmit, reset } = useForm<IAuthFormData>();
@@ -50,6 +54,10 @@ export function AuthForm({ isLogin }: AuthFormProps) {
     },
   });
 
+  const handleTestLogin = () => {
+    mutateLogin(TEST_ACCOUNT);
+  };
+
   const isPending = isLoginPending || isRegisterPending;
 
   const onSubmit: SubmitHandler<IAuthFormData> = data => {
@@ -84,6 +92,17 @@ export function AuthForm({ isLogin }: AuthFormProps) {
         >
           {isPending ? <Loader /> : isLogin ? 'Login' : 'Register'}
         </Button>
+
+        {isLogin && (
+          <Button
+            type="button"
+            variant="secondary"
+            disabled={isPending}
+            onClick={handleTestLogin}
+          >
+            {isPending ? <Loader /> : 'Login with test account'}
+          </Button>
+        )}
       </div>
       {isLogin ? (
         <Link href={'/register'}>Don't have account? Register </Link>
