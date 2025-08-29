@@ -54,7 +54,9 @@ export function AuthForm({ isLogin }: AuthFormProps) {
     },
   });
 
-  const handleTestLogin = () => {
+  const handleTestLogin = (e) => {
+    e.preventDefault();
+
     mutateLogin(TEST_ACCOUNT);
   };
 
@@ -95,7 +97,7 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 
         {isLogin && (
           <Button
-            type="button"
+            type="submit"
             variant="secondary"
             disabled={isPending}
             onClick={handleTestLogin}
